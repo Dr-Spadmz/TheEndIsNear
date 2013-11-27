@@ -1,5 +1,8 @@
 package spadmz.tein;
 
+import net.minecraftforge.common.Configuration;
+import spadmz.tein.block.TEINBlocks;
+import spadmz.tein.lib.ConfigurationHandler;
 import spadmz.tein.lib.Reference;
 import spadmz.tein.proxy.CommonProxy;
 import cpw.mods.fml.common.Mod;
@@ -21,7 +24,9 @@ public class TheEndIsNear {
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
+		ConfigurationHandler.initConfigs(new Configuration(event.getSuggestedConfigurationFile()));
 		
+		TEINBlocks.init();
 	}
 	
 	@EventHandler
